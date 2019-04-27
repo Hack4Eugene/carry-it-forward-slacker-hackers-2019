@@ -1,0 +1,12 @@
+version: 0.2              # Always use version 2
+phases:
+  install:
+    commands:
+      - make install      # Install dependencies
+  build:
+    commands:
+      - make build        # Build project
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
