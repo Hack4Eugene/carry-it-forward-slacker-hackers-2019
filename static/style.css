@@ -22,9 +22,14 @@ body {
   color:#555;
 }
 
+.nav-link :active {
+  color: #b73e45;
+}
+
 #mainNavLink {
   margin: 1.25em;
 }
+
 /* Headers */
 h1 {
   font-family: 'Proxima Nova';
@@ -45,10 +50,6 @@ h2 {
 
 .card-body {
   border: 0.5px darkgrey;
-}
-
-.card-title {
-  margin-bottom: .25rem !important;
 }
 
 #empty-card-title {
@@ -78,46 +79,6 @@ h2 {
 
 p {
   margin-bottom: 0.5em !important;
-}
-
-.waterfall-background {
-  background: url(../meditation/images/waterfall.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.cloud-background {
-  background: url(../meditation/images/clouds.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.tree-background {
-  background: url(../meditation/images/tree.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.heart-background {
-  background: url(../meditation/images/heart.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.field-background {
-  background: url(../meditation/images/field.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 /* Buttons */
