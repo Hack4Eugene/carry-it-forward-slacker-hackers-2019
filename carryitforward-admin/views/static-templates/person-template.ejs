@@ -9,9 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Carry It Forward">
   <meta name="author" content="Kathleen Weisensel">
-  <meta name="x-donation-item-name" content="Carry it forward for Tom">
+  <meta name="x-donation-item-name" content="Carry it forward for <%= person.firstName.S %>">
 
-  <title>Spark</title>
+  <title>Carry it Forward for <%= person.firstName.S %></title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -53,16 +53,16 @@
     <!-- Main Content -->
 
     <div class="header-center row" style="padding-top: 2em;">
-      <h1>Meet Tom</h1>
+      <h1>Meet <%= person.firstName %>  <%= person.lastName || '' %></h1>
     </div>
 
     <div class="row">
       <div class="col-md-6">
-        <img src="../images/tom.png" alt="Image of Tom">
+        <img src="../images/<%= person.firstName.S + '-' + person.uuid.S %>" alt="Image of <%= person.firstName.S %>">
       </div>
       <div class="col-md-6">
         <div class="bio-content">
-          <p>My name is Tom and this is my story.</p>
+          <p><%= person.bio.S %></p>
         </div>
       </div>
     </div>
@@ -91,17 +91,13 @@
             </h6>
           </div>
 
-          <div class="col-md-2 mb-3">
-            <h6>
-              <a href="https://www.carryitforward.net/privacy-policy">Donate Goods</a>
-            </h6>
-          </div>
-
-          <div class="col-md-2 mb-3">
-            <h6>
-              <a href="https://www.carryitforward.net/conflict-of-interest">Donate Via Amazon</a>
-            </h6>
-          </div>
+          <% if (person.wishlist) { %>
+            <div class="col-md-2 mb-3">
+              <h6>
+                <a href="<%= person.wishlist.S %>">Donate Goods</a>
+              </h6>
+            </div>
+          <% } %>
 
           <div class="col-md-2 mb-3">
             <h6>
