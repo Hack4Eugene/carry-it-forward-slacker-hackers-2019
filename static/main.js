@@ -1,7 +1,7 @@
 "use strict"
 
 // CONFIGURATIONS
-const DONATION_EMAIL = 'thejoshuaevans@gmail.com';
+const DONATION_EMAIL = 'info@carryitforward.net';
 
 $(function () {
   $(document).scroll(function () {
@@ -19,10 +19,10 @@ if (typeof QRCode !== 'undefined') {
 
 // Try to generate a donation link
 try {
-  const targetId = document.querySelector("meta[name='x-target-id']").getAttribute('content');
+  const itemName = document.querySelector("meta[name='x-donation-item-name']").getAttribute('content');
   const donateFundsLinkElement = document.getElementById('donate-funds-link');
 
-  const href = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=${DONATION_EMAIL}&lc=US&item_name=${targetId}&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted`
+  const href = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=${DONATION_EMAIL}&lc=US&item_name=${itemName}&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted`
   donateFundsLinkElement.setAttribute('href', href);
 } catch (e) {
   // Don't allow errors to bubble
